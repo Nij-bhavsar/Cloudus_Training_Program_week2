@@ -195,3 +195,26 @@ console.log(obj)
 
 const youngest = users.reduce((young, u) => u.age < young.age ? u:young )
 console.log(youngest)
+
+// Task-7: Sort employees by salary (high to low) and find the total salary . (Hint: [...employees].sort((a, b) => b.salary - a.salary) )
+
+const employees = [
+    {name: "A", salary: 30000},
+    {name: "B", salary: 40000},
+    {name: "C", salary: 50000}
+]
+// sorted using spread(...) and .sort method
+const salary = [...employees].sort((m, n) => n.salary - m.salary)
+console.log(salary)
+
+// Task-8:Group users by city: { Surat: [...], Mumbai: [...], Pune: [...] } .(Hint: reduce and {} )
+
+const city = users.reduce((group, emp) => {
+        if(!group[emp.city]) {
+            group[emp.city] = [];
+        }  // condition for rather a city exist or not for grouping
+        group[emp.city].push(emp);
+        return group;
+},{} // {} used to save values 
+)
+console.log(city)
