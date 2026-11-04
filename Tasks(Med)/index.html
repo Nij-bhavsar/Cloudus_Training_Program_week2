@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks: Medium</title>
+</head>
+<body>
+    <!-- task-4 -->
+    <h3>Task-4 : Task 4: Form validation:name (not empty), email (contains @), password (more than 6 characters). <br> Show red error text for each mistake.</h3>
+    
+    <form id="myform">
+        <h3>Fill the form below!</h3>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <p id="nameerror" style="color: red;"></p>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email">
+            <p id="emailerror" style="color: red;"></p>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="pass">
+            <p id="passerror" style="color: red;"></p>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    
+<script src="script.js"></script>
+    
+</body>
+</html>
