@@ -44,3 +44,42 @@ form.addEventListener("submit", function(event) {
     }
 })
 
+// Task-5
+
+const savebtn = document.querySelector("#savebtn")
+
+const savedcolor = localStorage.getItem("bgcolor")
+if(savedcolor){
+    document.bgColor = savedcolor;
+}
+
+savebtn.addEventListener("click", function() {
+    document.bgColor = "Skyblue";
+    localStorage.setItem("bgcolor", "Skyblue");
+})
+
+// Task-6
+
+let input = document.getElementById("task")
+let tbtn = document.getElementById("tbtn")
+let lists = document.getElementById("lists")
+
+tbtn.addEventListener("click", () => {
+    let task = input.value.trim();
+    let li = document.createElement("li");
+    li.textContent = task;
+
+    // remove button
+    let removebtn = document.createElement("button");
+    removebtn.textContent = "Remove";
+
+    // clicking function of remove button
+    removebtn.addEventListener("click", () => {
+        li.remove();
+    })
+    // button for remove
+    li.appendChild(removebtn);
+
+    lists.appendChild(li);
+    input.value = ""
+})

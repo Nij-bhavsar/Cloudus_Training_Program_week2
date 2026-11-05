@@ -92,6 +92,7 @@ localStorage.setItem("theme", "dark");
 const theme = localStorage.getItem("theme")
 console.log(theme);
 
+// localstorage saves name and greet when you cameback
 const username = document.getElementById("username")
 const savebtn = document.getElementById("sub")
 const data = document.getElementById("data")
@@ -106,30 +107,6 @@ const savedname = localStorage.getItem("username")
 if (savedname) {
     data.textContent = "Welcomeback, " + savedname
 }
-
-// counter app
-let count = 0
-const display = document.querySelector("#count")
-
-function update(){
-    display.textContent = count;
-}
-
-document.querySelector("#minus").addEventListener("click", () => {
-    if(count > 0){
-    count--;
-    update();
-    }
-    
-})
-document.querySelector("#plus").addEventListener("click", () => {
-    count++;
-    update();
-})
-document.querySelector("#reset").addEventListener("click", () => {
-    count = 0;
-    update();
-})
 
 // task-1
 
@@ -156,4 +133,28 @@ const sub1 = document.querySelector("#sub1")
 sub1.addEventListener("click", () => {
     const name1 = input1.value;
     output1.textContent = `Hello, ${name1}!`;
+})
+
+// Task-3: counter app
+let count = 0
+const display = document.querySelector("#count")
+
+function update(){
+    display.textContent = count;
+}
+
+document.querySelector("#minus").addEventListener("click", () => {
+    if(count > 0){
+    count--;
+    update();
+    }
+    
+})
+document.querySelector("#plus").addEventListener("click", () => {
+    count++;
+    update();
+})
+document.querySelector("#reset").addEventListener("click", () => {
+    count = 0;
+    update();
 })

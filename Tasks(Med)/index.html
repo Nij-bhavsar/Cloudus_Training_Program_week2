@@ -7,28 +7,45 @@
 </head>
 <body>
     <!-- task-4 -->
-    <h3>Task-4 : Task 4: Form validation:name (not empty), email (contains @), password (more than 6 characters). <br> Show red error text for each mistake.</h3>
+    <h1>Medium</h1>
+    <h2>Task 4: Form validation:name (not empty), email (contains @), password (more than 6 characters). <br> Show red error text for each mistake.</h2>
     
     <form id="myform">
         <h3>Fill the form below!</h3>
         <div>
             <label for="name">Name</label>
-            <input type="text" id="name">
+            <input type="text" id="name" placeholder="Enter your name">
             <p id="nameerror" style="color: red;"></p>
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="text" id="email">
+            <input type="text" id="email" placeholder="Enter your email">
             <p id="emailerror" style="color: red;"></p>
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" id="pass">
+            <input type="password" id="pass" placeholder="Enter you password">
             <p id="passerror" style="color: red;"></p>
         </div>
         <button type="submit" id="submit">Submit</button>
     </form>
-    
+
+    <!-- task-5 -->
+    <h2> Task-5: Dark/Light mode toggle:a button changes the page background, and thechoice is saved in localStorage (it stays after refresh).</h2>
+
+    <h3>Click on the button, then background color may be change, and stored in the localStorage.</h3>
+    <button id="savebtn">Change Colour</button>
+
+    <!-- Task-6 -->
+    <h2> Task 6:To-Do List: type a task, click "Add" to add it to the list, and each item has a"Delete"<br>(Hint:createElement, appendChild , remove).</h2>
+
+    <h3>To-do list</h3>
+
+    <input type="text" id="task" placeholder="Enter your task">
+    <button id="tbtn">Add</button>
+    <ol id="lists"></ol>   
+     
+
 <script src="script.js"></script>
     
 </body>
