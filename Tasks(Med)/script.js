@@ -28,7 +28,7 @@ form.addEventListener("submit", function(event) {
         isValid = false;
     }
     // email validation
-    if(!email.includes('@')) {
+    if(!email.includes('@gmail.com')) {
         emailerror.textContent = "Enter a valid email";
         isValid = false;
     }
@@ -74,7 +74,7 @@ tbtn.addEventListener("click", () => {
 
     // remove button
     const removebtn = document.createElement("button");
-    removebtn.textContent = "Remove";
+    removebtn.textContent = "Delete";
 
     // clicking function of remove button
     removebtn.addEventListener("click", () => {

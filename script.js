@@ -43,7 +43,7 @@ let uname = document.getElementById("uname")
 let result = document.getElementById("result")
 
 uname.addEventListener("input", function() {
-    result.textContent ="Hello, " + uname.value; // used this to greet with the input name.
+    result.textContent = `Hello, ${uname.value} !`; // used this to greet with the input name.
 }
 )
 
@@ -148,7 +148,6 @@ document.querySelector("#minus").addEventListener("click", () => {
     count--;
     update();
     }
-    
 })
 document.querySelector("#plus").addEventListener("click", () => {
     count++;
