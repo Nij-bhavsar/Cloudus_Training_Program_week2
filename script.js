@@ -1,41 +1,41 @@
 // 1. Object
 // simple object, key-value pair.
-const student = {
+const student1 = {
     name: "Nij",
     age: 21,
     city: "Navsari",
     isPassed: true
 }
-console.log(student.city)
-console.log(student.name)
-console.log(student["isPassed"])
+console.log(student1.city)
+console.log(student1.name)
+console.log(student1["isPassed"])
 
 // change or add key or value
-student.age = 22;
-student.course = "CSE";
-console.log(student.course)
+student1.age = 22;
+student1.course = "CSE";
+console.log(student1.course)
 
 // to remove key
-delete student.isPassed;
-console.log(student)
+delete student1.isPassed;
+console.log(student1)
 
 // object with function
 
 const person = {
     name:"Nij",
     sayHello() {
-        console.log("Hello, I am " + this.name);  // this = 
+        console.log(`Hello, I am ${this.name}`);  // this = the object itself(person).
     }
 };
 person.sayHello();
 
 // 2. Nested Object and array of objects
 
-const user = {
+const users = {
     name: "Nij",
     address: { city: "Navsari", pin: 396580, }
 }
-console.log(user.address.pin)
+console.log(users.address.pin)
 
 // simple array of objects (list of students)
 const students = [
@@ -43,6 +43,8 @@ const students = [
     { name: "Jil", marks: 78},
     { name: "Krunal", marks: 49}
 ];
+console.log()
+
 // print using indexing
 console.log(students[0])
 console.log(students[1].marks)
@@ -73,14 +75,15 @@ for (const s of students) {
 // 4. Destucturing (shorter way of writing code)
 
 // for object
-const student = { name1: "Nij", age: 21, city: "Surat"}
+const student2 = { name1: "Nij", age: 21, city1: "Surat"}
 
-const { name1, city } = student;
-console.log(name1, city)
+const { name1, city1 } = student2;
+console.log(name1, city1)
 
 // for arrays
 const clrs = ["Blue", "Yellow", "Orange", "White"]
-// using numbers of their index
+
+// using numbers of their index number.
 const [first, second] = clrs;
 console.log(first, second)
 
@@ -101,16 +104,16 @@ console.log(merged)
 
 // 6. JSON 
 
-const product = { name: "Notebook", price: 45 }
+const products = { name: "Notebook", price: 45 }
 
 // object -> JSON text 
-const text = JSON.stringify(product)
-console.log(text);
-console.log(typeof text)
+const texts = JSON.stringify(products)
+console.log(texts);
+console.log(typeof texts)
 
 // JSON text -> Object
-const obj = JSON.parse(text)
-console.log(obj.name);
+const obj1 = JSON.parse(texts)
+console.log(obj1.name);
 
 // demo task
 // find topper from the student object
@@ -143,7 +146,7 @@ console.log(product)
 // Task-2 : Make an object about yourself (name, age, hobbies array, address object). Usedestructuring to get name and city.
 
 const myself = {
-    name1: "Nij Bhavsar",
+    name2: "Nij Bhavsar",
     age: 21,
     hobbies: ["Cricket" , "Website Development"],
     address:{
@@ -153,9 +156,9 @@ const myself = {
         di: "Navsari"
     }
 }
-const name1 = myself.name1
-const city = myself.address.city
-console.log("name is:", name1, ", city is:", city)
+const name2 = myself.name2
+const city2 = myself.address.city
+console.log("name is:", name2, ", city is:", city2)
 
 // Task 3: Merge {a:1, b:2} and {c:3, d:4} using spread.
 
@@ -168,16 +171,16 @@ console.log(mgd)
 // MEDIUM
 // Task-4: From the users array below, make a list of all names (map) and get users who live in Surat (filter).
 
-const users = [
+const user1 = [
     { name1: "Ravi", age: 22, city: "Surat" }, 
     { name1: "Meera", age: 25, city: "Mumbai" }, 
     { name1: "Amit", age: 19, city: "Surat" }, 
     { name1: "Neha", age: 28, city: "Pune" }
 ]
 
-const lists = users.map(u => u.name1)
+const lists = user1.map(u => u.name1)
 console.log(lists)
-const result = users
+const result = user1
     .filter(u => u.city === "Surat")
     .map(u => u.name1)
 console.log(result)
@@ -193,7 +196,7 @@ console.log(obj)
 
 // Task-6: Find the youngest user in users.
 
-const youngest = users.reduce((young, u) => u.age < young.age ? u:young )
+const youngest = user1.reduce((young, u) => u.age < young.age ? u:young )
 console.log(youngest)
 
 // Task-7: Sort employees by salary (high to low) and find the total salary . (Hint: [...employees].sort((a, b) => b.salary - a.salary) )
@@ -209,7 +212,7 @@ console.log(salary)
 
 // Task-8:Group users by city: { Surat: [...], Mumbai: [...], Pune: [...] } .(Hint: reduce and {} )
 
-const city = users.reduce((group, emp) => {
+const city = user1.reduce((group, emp) => {
         if(!group[emp.city]) {
             group[emp.city] = [];
         }  // condition for rather a city exist or not for grouping
