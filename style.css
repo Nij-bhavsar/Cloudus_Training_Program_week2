@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.app {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: auto;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 10px rgb(60, 59, 59);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(234, 246, 255, 0.78)
+}
+
+#title {
+    text-align: center;
+    color: #174A70
+}
+.searchForm {
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#cityInput {
+    max-width: 100%;
+    font-size: 20px;
+    border: 1px #B8D2E3;
+    border-radius: 5px;
+    padding: 10px 30px;
+    color: #263746;
+    background-color: #ffffff;
+}
+
+#sub {
+    font-size: 20px;
+    padding: 10px;
+    border: 1px #B8D2E3;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #E05A47;
+}
+#sub:hover {
+    opacity: 0.7;
+}
+
+.temp {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.hot {
+    color: #E53935;
+}
+
+.cold {
+    color: #1976D2;
+}
+
+.normal {
+    color: #E87942;
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: large;
+}
+
+#rst {
+    padding: 10px;
+    border: 1px #B8D2E3;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #f23b23;
+    font-size: 20px;
+    cursor: pointer;
+}
