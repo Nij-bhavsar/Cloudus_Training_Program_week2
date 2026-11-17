@@ -1,0 +1,23 @@
+body {
+    display:flex;
+    grid-column: 2;
+}
+#weather {
+    box-sizing: border-box;
+    width: 310px;
+    height: 180px;
+    /* border: 1px solid gray; */
+    padding: 10px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 8px gray;
+}
+#weather1 {
+    box-sizing: border-box;
+    width: 310px;
+    height: 180px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 8px gray;
+}

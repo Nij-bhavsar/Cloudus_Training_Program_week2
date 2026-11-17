@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-5(Tasks-Med)</title>
+</head>
+<body style="zoom: 125%;">
+    <!-- task-4 -->
+    <div>
+        <h2>Task-4: Add a loading text/spinner and an error message . Test the error by using a wrong URL.</h2>
+        <p style="color: gray;">Click on the below button, then it shows loading and if the data is not loaded then it shows error. </p>
+        
+        <button id="data">Load Data</button>
+        <div class="spinner" id="loader" style="width: 35px; height: 35px; border: 5px solid gray; border-top: 5px solid rgb(3, 3, 7); border-radius: 50%; animation: spin 1s linear infinite; margin-top: 25px"></div>
+        <p id="error"></p>
+    </div>
+
+    <!-- task-5 -->
+     <div>
+        <h2>Task-5: Build a search box : as you type, the user list filters by name. (Hint: filter + includes + toLowerCase())</h2>
+        <h3>Search User</h3>
+        <p style="color: gray;">Below, if you search the user, then below list may be filtered by that user's name.</p>
+        
+        <div>
+            <input type="text" placeholder="search here" id="searchbox">
+            <ul id="lists"></ul>
+            <p id="status"></p>
+        </div>
+     </div>
+
+     <!-- task-6 -->
+
+      <div>
+        <h2>Task-6: Joke app: click a button to get a new joke (setup and punchline).</h2>
+        <p>In this, evertime you click on the button then you will get a new joke.</p>
+
+        <h3>Random Joke App 😂</h3>
+        <div>
+            <h4 id="setup">Click the button to get a joke!</h4>
+            <p id="joke"></p>
+        </div>
+        
+        <button type="button" id="btn1">Click me</button>
+        <p id="status2"></p>
+      </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

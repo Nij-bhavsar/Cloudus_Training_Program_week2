@@ -1,63 +1,61 @@
-// // async practice
-// console.log("1. start")
+// async practice
+console.log("1. start")
 
-// const { use } = require("react");
+setTimeout(() => {
+    console.log("2. this prints after 2 seconds");
+}, 2000);
 
-// setTimeout(() => {
-//     console.log("2. this prints after 2 seconds");
-// }, 2000);
+console.log("3. End")
 
-// console.log("3. End")
+// Promise practice
 
-// // Promise practice
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Data arrived!");
+    }, 1000);
+})
+myPromise
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
 
-// const myPromise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve("Data arrived!");
-//     }, 1000);
-// })
-// myPromise
-//     .then(data => console.log(data))
-//     .catch(error => console.log(error));
+// async/ await (in easiest way)
 
-// // async/ await (in easiest way)
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function main() {
+    console.log("Start");
+    await wait(2000);
+    console.log("After 2 seconds");
+}
+main();
 
-// function wait(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// }
-// async function main() {
-//     console.log("Start");
-//     await wait(2000);
-//     console.log("After 2 seconds");
-// }
-// main();
+// try/catch (catch errors)
+// example
+try {
+    console.log("Start");
 
-// // try/catch (catch errors)
-// // example
-// try {
-//     console.log("Start");
+    let result = undefined.name;
+    console.log("End")
+}
+catch(error) {
+    console.log("Something went wrong!");
+}
 
-//     let result = undefined.name;
-//     console.log("End")
-// }
-// catch(error) {
-//     console.log("Something went wrong!");
-// }
+// fetch() to get data from an API
 
-// // fetch() to get data from an API
-
-// async function getUsers() {
-//     try {
-//         const response = await
-//     fetch("https://jsonplaceholder.typicode.com/users")
-//         const data = await response.json();
-//         console.log(data);
-//     }
-//     catch(error) {
-//         console.log("Error:", error.message);
-//     }
-// }
-// getUsers();
+async function getUsers() {
+    try {
+        const response = await
+    fetch("https://jsonplaceholder.typicode.com/users")
+        const data = await response.json();
+        console.log(data);
+    }
+    catch(error) {
+        console.log("Error:", error.message);
+    }
+}
+getUsers();
 
 // Show Loading and Error
 const status1 = document.querySelector("#status1")
@@ -139,9 +137,7 @@ async function getUser() {
             const li = document.createElement("li");
             li.textContent = U.name
             list1.appendChild(li)
-            
-        });
-        
+        });   
         console.log(data)
     }
     catch (error){
