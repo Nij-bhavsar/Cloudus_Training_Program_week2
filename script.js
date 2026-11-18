@@ -61,12 +61,11 @@ function showWeather(name, country, w) {
     else {
         tempclass = "normal";
     }
-
     result.innerHTML = `
         <div class="card">
             <h2>${name}, ${country}</h2>
 
-            <p class="temp">${w.temperature} °C</p>
+            <p class="temp ${tempclass}">${w.temperature} °C</p>
 
             <p>Wind: ${w.windspeed} km/h</p>
         </div>
@@ -143,3 +142,4 @@ reset.addEventListener("click", () => {
 
     cityInput.value = "";
 });
+

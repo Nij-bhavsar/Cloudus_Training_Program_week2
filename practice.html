@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <style>
+        /* ===== GENERAL CSS ===== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+
+            background-image: url("https://drive.google.com/uc?export=view&id=1ApIkqAGm5T8fP-hjsY5_q6IdsGJm4_S4");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* ===== MAIN APP ===== */
+
+        .app {
+            font-family: 'Lucida Sans', sans-serif;
+            width: 500px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 1px 1px 10px rgb(86, 84, 84);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+        }
+
+        #title {
+            text-align: center;
+            color: #cedde8;
+            font-size: 28px;
+        }
+
+        /* ===== SEARCH FORM ===== */
+
+        #searchForm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        #cityInput {
+            width: 100%;
+            min-width: 0;
+            font-size: 18px;
+            border: 1px solid #B8D2E3;
+            border-radius: 5px;
+            padding: 10px;
+            color: #263746;
+            background-color: #d2d2d2;
+        }
+
+        #sub {
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #FFFFFF;
+            background-color: #E05A47;
+            white-space: nowrap;
+        }
+
+        #sub:hover {
+            opacity: 0.7;
+        }
+
+        /* ===== STATUS ===== */
+
+        #status {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        /* ===== WEATHER RESULT ===== */
+
+        #result {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: large;
+            width: 100%;
+        }
+
+        .card {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 1px 1px 8px rgb(86, 84, 84);
+            overflow-wrap: anywhere;
+        }
+
+        .card h2 {
+            font-size: 22px;
+        }
+
+        .temp {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .hot {
+            color: red;
+        }
+
+        .cold {
+            color: blue;
+        }
+
+        .normal {
+            color: orange;
+        }
+
+        /* ===== RECENT SEARCHES ===== */
+
+        #recentSearches {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #lastsearch {
+            color: darkmagenta;
+            font-size: 20px;
+        }
+
+        #searchList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            color: chocolate;
+            background-color: rgb(222, 221, 221);
+            border-radius: 10px;
+            width: 100%;
+            padding: 15px;
+            list-style: none;
+            margin: 0;
+        }
+
+        #searchList li {
+            padding: 6px 10px;
+            background-color: white;
+            border-radius: 5px;
+            overflow-wrap: anywhere;
+            max-width: 100%;
+        }
+
+        /* ===== RESET BUTTON ===== */
+
+        .resetbtn {
+            display: flex;
+            justify-content: center;
+        }
+
+        #rst {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            background-color: #E05A47;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #rst:hover {
+            opacity: 0.7;
+        }
+
+        /* ===== MOBILE RESPONSIVENESS ===== */
+
+        @media screen and (max-width: 480px) {
+
+            body {
+                padding: 10px;
+                background-attachment: scroll;
+                align-items: flex-start;
+            }
+
+            .app {
+                width: 100%;
+                padding: 15px;
+                margin: 10px 0;
+            }
+
+            #title {
+                font-size: 22px;
+            }
+
+            #searchForm {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #cityInput {
+                width: 100%;
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            #sub {
+                width: 100%;
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .card h2 {
+                font-size: 19px;
+            }
+
+            .temp {
+                font-size: 28px;
+            }
+
+            #result {
+                font-size: 16px;
+            }
+
+            #rst {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            #lastsearch {
+                font-size: 18px;
+            }
+
+            #searchList {
+                padding: 10px;
+                gap: 8px;
+            }
+        }
+
+        /* ===== SMALL MOBILE SCREENS ===== */
+
+        @media screen and (max-width: 320px) {
+
+            body {
+                padding: 5px;
+            }
+
+            .app {
+                padding: 12px;
+            }
+
+            #title {
+                font-size: 19px;
+            }
+
+            .temp {
+                font-size: 24px;
+            }
+
+            .card h2 {
+                font-size: 17px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <h1 id="title">☀️ Weather App</h1>
+
+        <form id="searchForm">
+
+            <input
+                id="cityInput"
+                type="text"
+                placeholder="Enter city name (e.g. Surat)"
+            >
+
+            <button type="submit" id="sub">Search</button>
+
+        </form>
+
+        <p id="status"></p>
+
+        <div id="result"></div>
+
+        <div id="recentSearches">
+
+            <h3 id="lastsearch">Recent Searches</h3>
+
+            <ul id="searchList"></ul>
+
+        </div>
+
+        <div class="resetbtn">
+
+            <button type="reset" id="rst">Reset</button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // ===== SELECT ELEMENTS =====
+
+        const form = document.querySelector("#searchForm");
+        const cityInput = document.querySelector("#cityInput");
+        const status = document.querySelector("#status");
+        const result = document.querySelector("#result");
+
+        const searchList = document.querySelector("#searchList");
+        const recentSearches = document.querySelector("#recentSearches");
+        const reset = document.querySelector("#rst");
+
+
+        // ===== GET WEATHER FUNCTION =====
+
+        async function getWeather(city) {
+
+            status.textContent = "Loading...";
+            result.innerHTML = "";
+
+            try {
+
+                // 1) City to location
+
+                const geoRes = await fetch(
+                    `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1`
+                );
+
+                const geoData = await geoRes.json();
+
+                if (!geoData.results || geoData.results.length === 0) {
+                    throw new Error("City not found");
+                }
+
+                const {
+                    latitude,
+                    longitude,
+                    name,
+                    country
+                } = geoData.results[0];
+
+
+                // 2) Location to weather
+
+                const wRes = await fetch(
+                    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
+                );
+
+                const wData = await wRes.json();
+                const w = wData.current_weather;
+
+                if (!w) {
+                    throw new Error("Weather data not available");
+                }
+
+                status.textContent = "";
+
+                showWeather(name, country, w);
+
+
+                // Remember last searched city
+
+                localStorage.setItem("lastCity", city);
+
+                saveSearch(name);
+
+            }
+
+            catch (err) {
+
+                status.textContent = "Error: " + err.message;
+
+            }
+
+        }
+
+
+        // ===== SHOW WEATHER FUNCTION =====
+
+        function showWeather(name, country, w) {
+
+            let tempclass = "";
+
+            if (w.temperature > 30) {
+
+                tempclass = "hot";
+
+            }
+
+            else if (w.temperature < 20) {
+
+                tempclass = "cold";
+
+            }
+
+            else {
+
+                tempclass = "normal";
+
+            }
+
+            result.innerHTML = `
+
+                <div class="card">
+
+                    <h2>${name}, ${country}</h2>
+
+                    <p class="temp ${tempclass}">
+                        ${w.temperature} °C
+                    </p>
+
+                    <p>
+                        Wind: ${w.windspeed} km/h
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+        // ===== SAVE RECENT SEARCHES =====
+
+        function saveSearch(city) {
+
+            let searches = [];
+
+            try {
+
+                searches = JSON.parse(
+                    localStorage.getItem("recentSearches")
+                ) || [];
+
+                if (!Array.isArray(searches)) {
+                    searches = [];
+                }
+
+            }
+
+            catch (error) {
+
+                searches = [];
+
+            }
+
+
+            // Remove duplicate city
+
+            searches = searches.filter(
+                item => item.toLowerCase() !== city.toLowerCase()
+            );
+
+
+            // Add latest city at the start
+
+            searches.unshift(city);
+
+
+            // Keep only last 5 searches
+
+            searches = searches.slice(0, 5);
+
+
+            // Save array in localStorage
+
+            localStorage.setItem(
+                "recentSearches",
+                JSON.stringify(searches)
+            );
+
+
+            displaySearches(searches);
+
+        }
+
+
+        // ===== DISPLAY RECENT SEARCHES =====
+
+        function displaySearches(searches) {
+
+            searchList.innerHTML = "";
+
+            searches.forEach(city => {
+
+                const li = document.createElement("li");
+
+                li.textContent = city;
+
+                searchList.appendChild(li);
+
+            });
+
+        }
+
+
+        // ===== FORM SUBMIT EVENT =====
+
+        form.addEventListener("submit", (e) => {
+
+            e.preventDefault();
+
+            const city = cityInput.value.trim();
+
+            if (city) {
+
+                getWeather(city);
+
+            }
+
+        });
+
+
+        // ===== LOAD PREVIOUS SEARCHES =====
+
+        let oldSearches = [];
+
+        const savedSearches = localStorage.getItem("recentSearches");
+
+        if (savedSearches) {
+
+            try {
+
+                oldSearches = JSON.parse(savedSearches);
+
+                if (!Array.isArray(oldSearches)) {
+                    oldSearches = [];
+                }
+
+            }
+
+            catch (error) {
+
+                oldSearches = [];
+
+                localStorage.removeItem("recentSearches");
+
+            }
+
+        }
+
+        displaySearches(oldSearches);
+
+
+        // ===== SHOW LAST CITY WHEN PAGE OPENS =====
+
+        const last = localStorage.getItem("lastCity");
+
+        if (last) {
+
+            cityInput.value = last;
+
+            getWeather(last);
+
+        }
+
+
+        // ===== RESET BUTTON =====
+
+        reset.addEventListener("click", () => {
+
+            cityInput.value = "";
+
+        });
+
+    </script>
+
+</body>
+</html>
