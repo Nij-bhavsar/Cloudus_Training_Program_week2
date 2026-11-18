@@ -1,0 +1,298 @@
+body {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 15px;
+}
+h1, h2, h3, .navbar a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.body {
+    padding: 10px;
+}
+.navi {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 20px 30px -2px rgba(24, 18, 18, 0.08);
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(236, 226, 226);
+}
+
+#logo img {
+    width: 210px;
+    height: 55px;
+    object-fit:cover;
+}
+#items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    gap: 30px;
+    left: 45%;
+    font-size: 25px;
+    font-weight: 100;
+}
+#homep:hover {
+    opacity: 0.5;
+}
+#fav:hover {
+    opacity: 0.5;
+}
+#items a {
+    text-decoration: none;
+    color: rgb(46, 30, 69);
+    font-weight: bold;
+}
+.main {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#heading {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#favorite {
+    color: blue;
+}
+#guide {
+    margin-top: 0;
+    font-size: 22px;
+    color: rgb(47, 45, 45);
+}
+
+#inp {
+    box-sizing: border-box;
+    border: 1px solid rgb(88, 84, 84);
+    border-radius: 20px;
+    width: auto;
+    padding: 8px;
+    font-size: 20px;
+}
+#subbtn {
+    box-sizing: border-box;
+    border: 1px solid rgb(88, 84, 84);
+    border-radius: 20px;
+    width: 100px;
+    padding: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: darkslategrey;
+    color: white;
+    margin-left: 5px;
+}
+#subbtn:hover {
+    opacity: 0.8;
+}
+
+#heroimg {
+    display: flex;
+    height: 400px;
+    width: 500px;
+}
+/* Explore Movies Section */
+#home {
+    padding: 0px 30px;
+}
+
+#home h2 {
+    font-size: 28px;
+    color: #172033;
+    margin-bottom: 25px;
+}
+
+/* Movie Grid */
+#movieContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+/* Movie Card */
+.moviecard {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover */
+.moviecard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Movie Poster */
+.moviecard img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Movie Title */
+.moviecard h3 {
+    font-size: 18px;
+    color: #172033;
+    margin: 12px 0 8px;
+}
+
+/* Movie Year */
+.moviecard p {
+    font-size: 15px;
+    color: #64748B;
+}
+
+/* Favorite Button */
+.moviecard button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563EB;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.moviecard button:hover {
+    background-color: #1D4ED8;
+}
+
+.moviecard button:disabled {
+    background-color: #64748B;
+    cursor: not-allowed;
+}
+#status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Favorites Page */
+
+/* Favorites Page */
+#fav1 {
+    padding-left: 20px;
+    font-size: 30px;
+}
+#favoriteContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 240px));
+    justify-content: start;
+    gap: 25px;
+    padding: 20px 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Favorites Heading */
+.favorites-heading {
+    font-size: 28px;
+    color: #172033;
+    margin: 30px;
+}
+
+/* Movie Card */
+#favoriteContainer .moviecard {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+#favoriteContainer .moviecard:hover {
+    transform: translateY(-5px);
+}
+
+/* Movie Poster */
+#favoriteContainer .moviecard img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+/* Movie Title */
+#favoriteContainer .moviecard h3 {
+    font-size: 18px;
+    color: #172033;
+    margin: 12px 0;
+}
+
+/* Movie Year */
+#favoriteContainer .moviecard p {
+    font-size: 15px;
+    color: #64748B;
+}
+
+/* Remove Button */
+#favoriteContainer .moviecard button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #DC2626;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#favoriteContainer .moviecard button:hover {
+    background-color: #B91C1C;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #favoriteContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    #favoriteContainer .moviecard img {
+        height: 250px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #favoriteContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 12px;
+    }
+
+    #favoriteContainer .moviecard img {
+        height: 190px;
+    }
+
+    #favoriteContainer .moviecard h3 {
+        font-size: 15px;
+    }
+
+    #favoriteContainer .moviecard button {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+}
