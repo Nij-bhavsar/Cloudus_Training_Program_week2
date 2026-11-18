@@ -7,7 +7,7 @@ body {
     box-sizing: border-box;
     padding: 20px;
 
-    background-image: url("bg.png");
+    background-image: url("bg.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -136,6 +136,7 @@ body {
         width: 100%;
         padding: 20px;
         margin: 0;
+        background-attachment: fixed;
     }
 
     #title {

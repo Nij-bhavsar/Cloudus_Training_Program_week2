@@ -21,6 +21,7 @@ async function getWeather(city) {
 
         if (!geoData.results) {
             throw new Error("City not found");
+            Error.style.color = "red";
         }
 
         const { latitude, longitude, name, country } = geoData.results[0];
@@ -44,10 +45,10 @@ async function getWeather(city) {
 
     } catch (err) {
         status.textContent = "Error: " + err.message;
+        status.style.color = "red";
     }
 }
 
-// Your job: Improve this function (make a nice card)
 function showWeather(name, country, w) {
     
     let tempclass = "";
@@ -142,4 +143,3 @@ reset.addEventListener("click", () => {
 
     cityInput.value = "";
 });
-
