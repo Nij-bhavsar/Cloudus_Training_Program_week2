@@ -129,7 +129,7 @@ body {
 
     body {
         padding: 10px;
-        /* background-attachment: scroll; */
+        background-attachment: fixed;
     }
 
     .app {
